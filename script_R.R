@@ -8,7 +8,7 @@ b1=as.data.frame(BBDD_Mat)
 attach(b1)
 #crear función
 Frecuencias <- function(il) {
-  N_observaciones=length(base1$ID)
+  N_observaciones=length(b1$ID)
   t1=0
   t0=0
   t9=0
@@ -92,7 +92,8 @@ curve(dnorm(x, mean=mean(TOTAL), sd=sd(TOTAL)), add=TRUE, col="red")
 #****************************** III.	Análisis Individual de Ítems *******************************
 
 #+++++++++++++++++++++++++++++++ Grado de dificultad ++++++++++++++++++++++++++++++++++++++++
-item.exam(base1, y = NULL, discrim = FALSE)
+library(psychometric)
+item.exam(b1, y = NULL, discrim = FALSE)
 
 item=c("i1", "i2","i3","i4","i5","i6","i7","i8","i9","i10","i11","i12","i13","i14","i15")
 
@@ -105,7 +106,7 @@ barplot(gd,names.arg = c("ítem 1","ítem 2", "ítem 3","ítem 4","ítem 5","ít
                          ,"ítem 13","ítem 14","ítem 15"))
 
 #++++++++++++++++++++++++++++++ Correlación ítem - rest ++++++++++++++++++++++++++++++++++++
-item.exam(base1, y = NULL, discrim = FALSE)
+item.exam(b1, y = NULL, discrim = FALSE)
 item.total(cbind.data.frame(i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15))
 
 
@@ -113,3 +114,4 @@ item.total(cbind.data.frame(i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15))
 #*************************************** IV.	Fiabilidad ***************************************
 
 alpha(cbind.data.frame(i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15))
+
