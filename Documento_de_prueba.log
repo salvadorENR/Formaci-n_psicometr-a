@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.30)  30 DEC 2018 17:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.30)  17 JAN 2019 18:37
 entering extended mode
 **./Documento_de_prueba.tex
 (Documento_de_prueba.tex
@@ -371,34 +371,55 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) (Documento_de_prueba-concordance.tex)
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 6.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 6.
-LaTeX Font Info:    Try loading font information for T1+aett on input line 8.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 11.
 
 ("C:\Users\Salvador\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
+<Documento_de_prueba-003.pdf, id=2, 433.62pt x 433.62pt>
+File: Documento_de_prueba-003.pdf Graphic file (type pdf)
+<use Documento_de_prueba-003.pdf>
+Package pdftex.def Info: Documento_de_prueba-003.pdf  used on input line 54.
+(pdftex.def)             Requested size: 276.00105pt x 276.0139pt.
+
 [1
 
 {C:/Users/Salvador/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(Documento_de_prueba.aux) ) 
+<Documento_de_prueba-004.pdf, id=10, 433.62pt x 433.62pt>
+File: Documento_de_prueba-004.pdf Graphic file (type pdf)
+<use Documento_de_prueba-004.pdf>
+Package pdftex.def Info: Documento_de_prueba-004.pdf  used on input line 78.
+(pdftex.def)             Requested size: 276.00105pt x 276.0139pt.
+
+[2 <./Documento_de_prueba-003.pdf>]
+<Documento_de_prueba-005.pdf, id=19, 433.62pt x 433.62pt>
+File: Documento_de_prueba-005.pdf Graphic file (type pdf)
+<use Documento_de_prueba-005.pdf>
+Package pdftex.def Info: Documento_de_prueba-005.pdf  used on input line 84.
+(pdftex.def)             Requested size: 276.00105pt x 276.0139pt.
+ [3 <./Documento_de_prueba-004.pdf>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 89.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 89.
+
+[4 <./Documento_de_prueba-005.pdf>] [5] (Documento_de_prueba.aux) ) 
 Here is how much of TeX's memory you used:
- 3137 strings out of 492970
- 45182 string characters out of 3125261
- 102107 words of memory out of 3000000
- 6974 multiletter control sequences out of 15000+200000
- 7722 words of font info for 22 fonts, out of 3000000 for 9000
+ 3153 strings out of 492970
+ 45787 string characters out of 3125261
+ 108107 words of memory out of 3000000
+ 6986 multiletter control sequences out of 15000+200000
+ 7890 words of font info for 23 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,5n,39p,288b,192s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Salvador/AppData/Local/Programs/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Salvador/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Salvador/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsltt10.pfb>
-Output written on Documento_de_prueba.pdf (1 page, 34089 bytes).
+ 41i,6n,39p,424b,192s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Sa
+lvador/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.p
+fb><C:/Users/Salvador/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmsltt10.pfb><C:/Users/Salvador/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Documento_de_prueba.pdf (5 pages, 63872 bytes).
 PDF statistics:
- 19 PDF objects out of 1000 (max. 8388607)
+ 50 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 5 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 20 words of extra memory for PDF output out of 10000 (max. 10000000)
 

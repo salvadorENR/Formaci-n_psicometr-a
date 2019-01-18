@@ -54,10 +54,20 @@ rownames(distribución_respuestas) <- c("ítem 1","ítem 2","ítem 3","ítem 4",
                                        ,"ítem 13","ítem 14","ítem 15")
 
 distribución_respuestas #ver la tabla de distribución de frecuencias por ítems
+por_resp=distribucion_respuestas/length(ID)
 hist(distribución_respuestas$Correcto)
 hist(distribución_respuestas$Incorrecto)
 hist(distribución_respuestas$No_responde)
 sort(distribución_respuestas$Correcto)
+barplot(por_resp$Correcto,names.arg = c("ítem 1","ítem 2", "ítem 3","ítem 4","ítem 5","ítem 6"
+                                                       ,"ítem 7","ítem 8","ítem 9","ítem 10","ítem 11","ítem 12"
+                                                       ,"ítem 13","ítem 14","ítem 15"))
+
+
+
+
+
+
 barplot(distribución_respuestas$Correcto,names.arg = c("ítem 1","ítem 2", "ítem 3","ítem 4","ítem 5","ítem 6"
                                                        ,"ítem 7","ítem 8","ítem 9","ítem 10","ítem 11","ítem 12"
                                                        ,"ítem 13","ítem 14","ítem 15"))

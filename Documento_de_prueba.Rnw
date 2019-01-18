@@ -2,12 +2,161 @@
 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
-Este es una prueba de kntir con R $a=25$
-<<>>=
+I. Análisis inicial
+1. Omisiones
+
+<<echo=FALSE>>=
 #Cargar la base de datos
 BBDD_Mat=read.csv("BBDD_Mat.csv")
+b1=as.data.frame(BBDD_Mat)
+attach(b1)
+Frecuencias <- function(il) {
+  N_observaciones=length(b1$ID)
+  t1=0
+  t0=0
+  t9=0
+  i=0
+  for (i in 1:N_observaciones) {
+    if (il[i]==1) {
+      t1=t1+1
+    } else {
+      if (il[i]==0){
+        t0=t0+1
+      }
+      else{
+        print(il)
+        t9=t9+1 
+      }
+    }
+  }
+  vector1=c(t1,t0,t9)
+  return(vector1)
+}
+
+f1= Frecuencias(i1)
+f2= Frecuencias(i2)
+f3= Frecuencias(i3)
+f4= Frecuencias(i4)
+f5= Frecuencias(i5)
+f6= Frecuencias(i6)
+f7= Frecuencias(i7)
+f8= Frecuencias(i8)
+f9= Frecuencias(i9)
+f10= Frecuencias(i10)
+f11= Frecuencias(i11)
+f12= Frecuencias(i12)
+f13= Frecuencias(i13)
+f14= Frecuencias(i14)
+f15= Frecuencias(i15)
+
+distribucion_respuestas=rbind.data.frame(f1,f2,f3,f4,f5,f6,f7,f8,f9,
+                                         f10,f11,f12,f13,f14,f15)
+colnames(distribucion_respuestas) <- c("Correcto","Incorrecto","No_responde") 
+rownames(distribucion_respuestas) <- c("ítem 1","ítem 2","ítem 3","ítem 4","ítem 5","ítem 6"
+                                       ,"ítem 7","ítem 8","ítem 9","ítem 10","ítem 11","ítem 12"
+                                       ,"ítem 13","ítem 14","ítem 15")
 @
+A partir de la tabla de frecuencias anterior, se concluye que no hay omisiones. 
+<<echo=True>>=
+distribucion_respuestas
+@
+2.	ítems en los que se observa una alta proporción de respuestas (mayor de 0.5). 
+<<echo= FALSE,fig=TRUE>>=
+por_resp=distribucion_respuestas/length(ID)
+por_resp
+barplot(por_resp$Correcto,names.arg = c("ítem 1","ítem 2", "ítem 3","ítem 4","ítem 5","ítem 6"
+                                                       ,"ítem 7","ítem 8","ítem 9","ítem 10","ítem 11","ítem 12","ítem 13","ítem 14","ítem 15")) 
+  
+@
+A partir de la tabla y gráfica anterior, se observa que los ítems con una proporción de respuestas correctas mayor a 0.5, son los ítems 1, 2, 3, 4, 7, 8, 9, 10, 12, 13.  
+
+3.	ítems con alto porcentaje de respuestas incorrectas (mayor del 50) 
+<<echo= FALSE,fig=TRUE>>=
+por_resp*100
+barplot(por_resp$Incorrecto*100,names.arg = c("ítem 1","ítem 2", "ítem 3","ítem 4","ítem 5","ítem 6"
+                                                       ,"ítem 7","ítem 8","ítem 9","ítem 10","ítem 11","ítem 12","ítem 13","ítem 14","ítem 15")) 
+@
+A partir de la tabla y gráfica anterior, se observa que los ítems con un porcentaje de respuestas incorrectas mayor al 50 por ciento, son los ítems 5, 6, 11, 14, 15.
+
+II.	Análisis Global del Test
+1. Histograma de los resultados totales
+
+<<echo=FALSE,fig=TRUE,>>=
+hist(TOTAL, freq=FALSE,col= "Black", border = "White",main = "Distribución de los resultados",xlab = "Resultados",ylab = "Densidad")
+curve(dnorm(x, mean=mean(TOTAL), sd=sd(TOTAL)), add=TRUE, col="red")
+@
+
+2. Estadísticos
+
+\begin{center}
+ \begin{tabular}{||c c||} 
+ \hline
+ Estadístico & Valor \\ [0.5ex] 
+ \hline\hline
+ Puntaje Mínimo & 0  \\ 
+ \hline
+ Puntaje Máximo & 15  \\
+ \hline
+ Media Aritmética & 8.2  \\
+ \hline
+ Desviación Estándar & 3.12 \\
+ \hline
+ Coeficiente de Asimetría & -0.14 \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+3. Por el hecho de que el valor de la desviación estándar no es alto se podría considerar que el valor de la media es un buen estadístico de tendencia central de los datos. 
+4. De entrada informa que la distribución tiene una asimetría negativa, pero no tan marcada por el hecho que el valor no está tan alejado de 0. 
+5. , All ver el histograma de la distribución, se puede apreciar que es una distribución que se asemaja a la normal, por lo que era esperable que el valor de la media fuera representativo de la distribución de los datos, al mismo tiempo se esperaría que el coeficiente de asimetría no tuviera un valor tan alto, siendo cercano a cero, refiriendo así a una distribución simétrica. 
+III. Análisis individual de los ítems. 
+1. Grado de dificultad de cada ítem 
+\begin{center}
+ \begin{tabular}{||c c||} 
+ \hline
+ ítem & Grado de dificultad (valor) \\ [0.5ex] 
+ \hline\hline
+ 1 &   0.90 \\ 
+ \hline
+ 2 & 0.77  \\
+ \hline
+ 3 & 0.52  \\
+ \hline
+ 4 & 0.74 \\
+ \hline
+  5 & 0.28 \\
+ \hline
+  6 & 0.34 \\
+ \hline
+  7 & 0.64 \\
+ \hline
+  8 & 0.57 \\
+ \hline
+  9 & 0.80 \\
+ \hline
+  10 & 0.51 \\
+ \hline
+  11 & 0.47 \\
+ \hline
+  12 & 0.67 \\
+ \hline
+  13 & 0.51 \\
+ \hline
+  14 & 0.11 \\
+ \hline
+  15 & 0.37 \\
+ \hline
+\end{tabular}
+\end{center}
+
+
+
 
 
 
 \end{document}
+
+
+
+
+
+
