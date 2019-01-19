@@ -2,7 +2,7 @@
 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
-I. Análisis inicial
+\textbf{I. Análisis inicial}\\ 
 1. Omisiones
 
 <<echo=FALSE>>=
@@ -56,11 +56,15 @@ rownames(distribucion_respuestas) <- c("ítem 1","ítem 2","ítem 3","ítem 4","
                                        ,"ítem 7","ítem 8","ítem 9","ítem 10","ítem 11","ítem 12"
                                        ,"ítem 13","ítem 14","ítem 15")
 @
+
 A partir de la tabla de frecuencias anterior, se concluye que no hay omisiones. 
+
 <<echo=True>>=
 distribucion_respuestas
 @
+
 2.	ítems en los que se observa una alta proporción de respuestas (mayor de 0.5). 
+
 <<echo= FALSE,fig=TRUE>>=
 por_resp=distribucion_respuestas/length(ID)
 por_resp
@@ -68,17 +72,20 @@ barplot(por_resp$Correcto,names.arg = c("ítem 1","ítem 2", "ítem 3","ítem 4"
                                                        ,"ítem 7","ítem 8","ítem 9","ítem 10","ítem 11","ítem 12","ítem 13","ítem 14","ítem 15")) 
   
 @
-A partir de la tabla y gráfica anterior, se observa que los ítems con una proporción de respuestas correctas mayor a 0.5, son los ítems 1, 2, 3, 4, 7, 8, 9, 10, 12, 13.  
+
+A partir de la tabla y gráfica anterior, se observa que los ítems con una proporción de respuestas correctas mayor a 0.5, son los ítems 1, 2, 3, 4, 7, 8, 9, 10, 12, 13. \\ 
 
 3.	ítems con alto porcentaje de respuestas incorrectas (mayor del 50) 
+
 <<echo= FALSE,fig=TRUE>>=
 por_resp*100
 barplot(por_resp$Incorrecto*100,names.arg = c("ítem 1","ítem 2", "ítem 3","ítem 4","ítem 5","ítem 6"
                                                        ,"ítem 7","ítem 8","ítem 9","ítem 10","ítem 11","ítem 12","ítem 13","ítem 14","ítem 15")) 
 @
-A partir de la tabla y gráfica anterior, se observa que los ítems con un porcentaje de respuestas incorrectas mayor al 50 por ciento, son los ítems 5, 6, 11, 14, 15.
 
-II.	Análisis Global del Test
+A partir de la tabla y gráfica anterior, se observa que los ítems con un porcentaje de respuestas incorrectas mayor al 50 por ciento, son los ítems 5, 6, 11, 14, 15.\\
+
+\textbf{II.	Análisis Global del Test}\\
 1. Histograma de los resultados totales
 
 <<echo=FALSE,fig=TRUE,>>=
@@ -105,11 +112,15 @@ curve(dnorm(x, mean=mean(TOTAL), sd=sd(TOTAL)), add=TRUE, col="red")
  \hline
 \end{tabular}
 \end{center}
-3. Por el hecho de que el valor de la desviación estándar no es alto se podría considerar que el valor de la media es un buen estadístico de tendencia central de los datos. 
-4. De entrada informa que la distribución tiene una asimetría negativa, pero no tan marcada por el hecho que el valor no está tan alejado de 0. 
-5. , All ver el histograma de la distribución, se puede apreciar que es una distribución que se asemaja a la normal, por lo que era esperable que el valor de la media fuera representativo de la distribución de los datos, al mismo tiempo se esperaría que el coeficiente de asimetría no tuviera un valor tan alto, siendo cercano a cero, refiriendo así a una distribución simétrica. 
-III. Análisis individual de los ítems. 
+
+3. Por el hecho de que el valor de la desviación estándar no es alto se podría considerar que el valor de la media es un buen estadístico de tendencia central de los datos. \\
+
+4. De entrada informa que la distribución tiene una asimetría negativa, pero no tan marcada por el hecho que el valor no está tan alejado de 0. \\
+
+5. , All ver el histograma de la distribución, se puede apreciar que es una distribución que se asemaja a la normal, por lo que era esperable que el valor de la media fuera representativo de la distribución de los datos, al mismo tiempo se esperaría que el coeficiente de asimetría no tuviera un valor tan alto, siendo cercano a cero, refiriendo así a una distribución simétrica.\\ 
+\textbf{III. Análisis individual de los ítems.} \\
 1. Grado de dificultad de cada ítem 
+
 \begin{center}
  \begin{tabular}{||c c||} 
  \hline
@@ -148,9 +159,45 @@ III. Análisis individual de los ítems.
 \end{tabular}
 \end{center}
 
+3. Correlación ítem - rest
 
+<<echo=FALSE>>=
+attach(b1)
+library(psychometric)
+solo_items=cbind.data.frame(i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15)
+item.total(solo_items)
+@
 
+4. Según las correlaciones mostrada en la tabla anterior, se tiene que los ítems 1, 3, 4, 9 y 14, deberían  ser excluidos por el hecho que su correlación con el resto de los ítems es menor que 25.\\
+El hacer nuevamente el cálculo de las correlaciones, excluyendo los ítems antes mencionados, se tiene la siguiente tabla:
 
+<<echo=FALSE>>=
+attach(b1)
+library(psychometric)
+solo_items=cbind.data.frame(i2,i5,i6,i7,i8,i10,i11,i12,i13,i15)
+item.total(solo_items)
+@
+
+De la que se observa que las correlaciones de los ítems que se han dejado, se mantiene o varían mínimamente. 
+
+\textbf{IV.	Fiabilidad}\\
+1. Alpha de Cronbach.\\
+El Alpha de Cronbach de los datos, según las variables que se han dejado es el siguiente: 
+
+<<echo=FALSE>>=
+library(psychometric)
+alpha(solo_items)
+@
+
+Al observar de nuevo la tabla que muestra el alpha de Cronbach una vez elimando el ítems:
+
+<<echo=FALSE>>=
+library(psychometric)
+solo_items=cbind.data.frame(i2,i5,i6,i7,i8,i10,i11,i12,i13,i15)
+item.total(solo_items)
+@
+
+Se determina que el alpha no aumentaría al eliminar otro de los ítems restantes. Por lo tanto el instrumento podría quedar con esos ítems, si bien el Alpha de Cronbach no es excelente, es aceptable. 
 
 
 \end{document}

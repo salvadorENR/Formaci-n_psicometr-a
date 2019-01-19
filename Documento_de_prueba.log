@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.30)  17 JAN 2019 18:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.12.30)  19 JAN 2019 16:16
 entering extended mode
 **./Documento_de_prueba.tex
 (Documento_de_prueba.tex
@@ -371,7 +371,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 ) (Documento_de_prueba-concordance.tex)
-LaTeX Font Info:    Try loading font information for T1+aett on input line 11.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 13.
 
 ("C:\Users\Salvador\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ae\t1aett.fd"
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
@@ -379,47 +379,64 @@ File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 <Documento_de_prueba-003.pdf, id=2, 433.62pt x 433.62pt>
 File: Documento_de_prueba-003.pdf Graphic file (type pdf)
 <use Documento_de_prueba-003.pdf>
-Package pdftex.def Info: Documento_de_prueba-003.pdf  used on input line 54.
+Package pdftex.def Info: Documento_de_prueba-003.pdf  used on input line 58.
 (pdftex.def)             Requested size: 276.00105pt x 276.0139pt.
 
 [1
 
 {C:/Users/Salvador/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<Documento_de_prueba-004.pdf, id=10, 433.62pt x 433.62pt>
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+
+ []
+
+<Documento_de_prueba-004.pdf, id=11, 433.62pt x 433.62pt>
 File: Documento_de_prueba-004.pdf Graphic file (type pdf)
 <use Documento_de_prueba-004.pdf>
-Package pdftex.def Info: Documento_de_prueba-004.pdf  used on input line 78.
+Package pdftex.def Info: Documento_de_prueba-004.pdf  used on input line 84.
 (pdftex.def)             Requested size: 276.00105pt x 276.0139pt.
-
 [2 <./Documento_de_prueba-003.pdf>]
-<Documento_de_prueba-005.pdf, id=19, 433.62pt x 433.62pt>
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+
+ []
+
+<Documento_de_prueba-005.pdf, id=20, 433.62pt x 433.62pt>
 File: Documento_de_prueba-005.pdf Graphic file (type pdf)
 <use Documento_de_prueba-005.pdf>
-Package pdftex.def Info: Documento_de_prueba-005.pdf  used on input line 84.
+Package pdftex.def Info: Documento_de_prueba-005.pdf  used on input line 91.
 (pdftex.def)             Requested size: 276.00105pt x 276.0139pt.
- [3 <./Documento_de_prueba-004.pdf>]
+[3 <./Documento_de_prueba-004.pdf>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 89.
+(Font)              <7> on input line 96.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 89.
+(Font)              <5> on input line 96.
 
-[4 <./Documento_de_prueba-005.pdf>] [5] (Documento_de_prueba.aux) ) 
+Underfull \hbox (badness 10000) in paragraph at lines 113--114
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 115--116
+
+ []
+
+[4 <./Documento_de_prueba-005.pdf>] [5] [6] (Documento_de_prueba.aux) ) 
 Here is how much of TeX's memory you used:
- 3153 strings out of 492970
- 45787 string characters out of 3125261
+ 3159 strings out of 492970
+ 45911 string characters out of 3125261
  108107 words of memory out of 3000000
- 6986 multiletter control sequences out of 15000+200000
- 7890 words of font info for 23 fonts, out of 3000000 for 9000
+ 6987 multiletter control sequences out of 15000+200000
+ 10676 words of font info for 28 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,39p,424b,192s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Sa
-lvador/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.p
-fb><C:/Users/Salvador/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmsltt10.pfb><C:/Users/Salvador/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Documento_de_prueba.pdf (5 pages, 63872 bytes).
+ 41i,6n,39p,426b,270s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/User
+s/Salvador/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
+x10.pfb><C:/Users/Salvador/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr10.pfb><C:/Users/Salvador/AppData/Local/Programs/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmsltt10.pfb><C:/Users/Salvador/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Documento_de_prueba.pdf (6 pages, 81908 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
+ 57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  20 words of extra memory for PDF output out of 10000 (max. 10000000)
 

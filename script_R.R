@@ -68,9 +68,7 @@ barplot(por_resp$Correcto,names.arg = c("ítem 1","ítem 2", "ítem 3","ítem 4"
 
 
 
-barplot(distribución_respuestas$Correcto,names.arg = c("ítem 1","ítem 2", "ítem 3","ítem 4","ítem 5","ítem 6"
-                                                       ,"ítem 7","ítem 8","ítem 9","ítem 10","ítem 11","ítem 12"
-                                                       ,"ítem 13","ítem 14","ítem 15"))
+barplot(distribución_respuestas$Correcto,names.arg = c("ítem 1", "ítem 2","ítem 3","ítem 4","ítem 5","ítem 6","ítem 7", "ítem 8","ítem 9","ítem 10","ítem 11","ítem 12","ítem 13","ítem 14","ítem 15"))
 barplot(distribución_respuestas$Incorrecto)
 barplot(distribución_respuestas$No_responde)
 
@@ -105,23 +103,26 @@ curve(dnorm(x, mean=mean(TOTAL), sd=sd(TOTAL)), add=TRUE, col="red")
 library(psychometric)
 item.exam(b1, y = NULL, discrim = FALSE)
 
-item=c("i1", "i2","i3","i4","i5","i6","i7","i8","i9","i10","i11","i12","i13","i14","i15")
+item=c("ítem_1", "ítem 2","ítem 3","ítem 4","ítem 5","ítem 6","ítem 7","ítem 8","ítem 9","ítem 10","ítem 11","ítem 12","ítem 13","ítem 14","ítem 15")
 
 gd= c(0.9046794,0.7710861,0.5167533,0.7420566,0.2807626,0.3382438,0.6390815,0.5684575,0.8019931,0.5092432,0.4692374,0.6707106,0.5079434,0.1067302,0.3703062)
 tabla_GD=cbind.data.frame(item,gd)
 tabla_GD
 attach(tabla_GD)
-barplot(gd,names.arg = c("ítem 1","ítem 2", "ítem 3","ítem 4","ítem 5","ítem 6"
-                         ,"ítem 7","ítem 8","ítem 9","ítem 10","ítem 11","ítem 12"
-                         ,"ítem 13","ítem 14","ítem 15"))
+barplot(gd,names.arg = c("ítem 1", "ítem 2","ítem 3","ítem 4","ítem 5","ítem 6","ítem 7","ítem 8","ítem 9","ítem 10","ítem 11","ítem 12","ítem 13","ítem 14","ítem 15"))
 
 #++++++++++++++++++++++++++++++ Correlación ítem - rest ++++++++++++++++++++++++++++++++++++
-item.exam(b1, y = NULL, discrim = FALSE)
+attach(b1)
+solo_items=cbind.data.frame(i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15)
+item.exam(solo_items, y = NULL, discrim = FALSE)
+
+
+
 item.total(cbind.data.frame(i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15))
 
 
 
 #*************************************** IV.	Fiabilidad ***************************************
 
-alpha(cbind.data.frame(i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15))
+alpha(solo_items)
 
