@@ -1,0 +1,91 @@
+﻿* Encoding: UTF-8.
+
+*****************************************************************************
+***ANÁLISIS DE LA DISTRIBUCIÓN DE LAS RESPUESTAS**
+*****************************************************************************
+
+*(1) Crear Tabla de Frecuencias, para analizar si hay datos perdidos
+* Luego, centrar la atención en cómo se distribuyen las opciones de respuesta
+* Es decir, ver que categorías de respuesta alcanzan un mayor porcentaje
+
+* No olviden REEMPLAZAR el nombre de las VARIABLES por el código correspondiente
+* A modo de ejemplo, les llame "item1 item2...item70", pero deben usar el nombre que utilizaron para sus Datos
+
+FREQUENCIES VARIABLES=item1 item2 item3 [ ... ] item70
+  /ORDER=ANALYSIS.
+
+***********************************************************************************************************************
+
+*(2) Análisis Global del Test
+* Se analiza la distribución del Puntaje Total alcanzado en el instrumento administrado
+
+*Generar los principales estadísticos de resumen (Centro, dispersión y forma)
+*Adicionalmente, se creará un Histograma con curva normal, para analizar empíricamente la forma de la distribución
+*No Olvide reemplazar "PUNTAJE TOTAL" por el nombre correspondiente a la suma de puntajes en su Base de Datos
+
+FREQUENCIES VARIABLES=PUNTAJE_TOTAL
+  /STATISTICS=STDDEV MINIMUM MAXIMUM MEAN SKEWNESS SESKEW
+  /HISTOGRAM NORMAL
+  /ORDER=ANALYSIS.
+
+
+***********************************************************************************************************************
+
+*ANÁLISIS DE ÍTEMS y PROPIEDADES PSICOMÉTRICAS
+
+*************************************************************************************************************************
+
+
+*(3) Calcular el Grado de Dificultad (GD) de cada ítem. 
+* En ítems dicotómicos (puntuaciones 0 o 1), el GD es simplemente la media aritmética de cada ítem
+*No Olvidar que el grado de dificultad indica la porporción de respuestas correctas en cada ítem
+*Mientras más se acerca a 1, más sencillo es el ítem (ya que más personas lo aciertan)
+
+FREQUENCIES VARIABLES=item1 item2 item3 [ ... ] item70
+  /FORMAT=NOTABLE
+  /STATISTICS=MEAN
+  /ORDER=ANALYSIS.
+
+************************************************************************************************************************
+
+*(4) Estimar el Índice de discriminación de cada ítem a través de la correlación "ITEM-REST"
+* Este procedimiento permite estimar la asociación entre cada ítem y el resto de la prueba
+*NO olvidar: se esperan asociaciones directas y significativas (mientras más alta, mejor)
+
+RELIABILITY
+  /VARIABLES=item1 item2 item3 [ ... ] item70
+  /SCALE('ALL VARIABLES') ALL
+  /MODEL=ALPHA
+  /STATISTICS=DESCRIPTIVE SCALE
+  /SUMMARY=TOTAL.
+
+*No olvide que se debe revisar la columna "Correlación elemento total-corregida"
+
+*****************************************************************************************************************************
+
+*(5) Si el instrumento administrado muy complejo, se sugiere calcular la correlación "ITEM-DIMENSION"
+*Se usa la misma sintaxis del paso (4), pero solo se ingresan los ítems de la dimensión correspondiente
+
+******************************************************************************************************************************
+
+*EN ESTE PUNTO SE DEBE HACER LA PRIMERA CRIBA DE ÍTEMS, ELIMINANDO A AQUELLOS 
+*QUE NO CUMPLAN CON LOS CRITERIOS ESTABLECIDOS DE DIFICULTAD Y DISCRIMINACIÓN
+
+*******************************************************************************************************************************
+
+*(6) Estimación de las Fiabilidad del Test (alpha de Cronbach) y de sus Escalas
+
+RELIABILITY
+  /VARIABLES=item1 item2 item3 [ ... ] item70
+  /SCALE('ALL VARIABLES') ALL
+  /MODEL=ALPHA
+  /SUMMARY=TOTAL.
+
+
+*Para la fiabilidad de la dimensión, se repite la sintaxis, pero solo se ingresan los ítems de la dimensión correspondiente
+
+******************************************************FIN************************************************************************** =)
+
+
+
+
