@@ -1,7 +1,13 @@
 \documentclass{article}
+\title{Tarea final del Módulo 3 "Principios psicométricos en las evaluaciones"}
+\author{Salvador Enrique Rodríguez Hernández}
+\date{\today} % para que no aparezca la fecha la dejo en blanco
 
 \begin{document}
 \SweaveOpts{concordance=TRUE}
+
+\maketitle
+
 \textbf{I. Análisis inicial}\\ 
 1. Omisiones
 
