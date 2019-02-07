@@ -174,13 +174,13 @@ solo_items=cbind.data.frame(i1,i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i14,i15)
 item.total(solo_items)
 @
 
-4. Según las correlaciones mostrada en la tabla anterior, se tiene que los ítems 1, 3, 4, 9 y 14, deberían  ser excluidos por el hecho que su correlación con el resto de los ítems es menor que 25.\\
+4. Según las correlaciones mostrada en la tabla anterior, se tiene que los ítems 1 y 14, deberían  ser excluidos por el hecho que su correlación con el resto de los ítems es menor que 25.\\
 El hacer nuevamente el cálculo de las correlaciones, excluyendo los ítems antes mencionados, se tiene la siguiente tabla:
 
 <<echo=FALSE>>=
 attach(b1)
 library(psychometric)
-solo_items=cbind.data.frame(i2,i5,i6,i7,i8,i10,i11,i12,i13,i15)
+solo_items=cbind.data.frame(i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i15)
 item.total(solo_items)
 @
 
@@ -199,7 +199,7 @@ Al observar de nuevo la tabla que muestra el alpha de Cronbach una vez elimando 
 
 <<echo=FALSE>>=
 library(psychometric)
-solo_items=cbind.data.frame(i2,i5,i6,i7,i8,i10,i11,i12,i13,i15)
+solo_items=cbind.data.frame(i2,i3,i4,i5,i6,i7,i8,i9,i10,i11,i12,i13,i15)
 item.total(solo_items)
 @
 
